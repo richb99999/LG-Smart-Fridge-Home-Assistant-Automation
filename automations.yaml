@@ -1,0 +1,38 @@
+  alias: fridge_thermostat_baseline_automation
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    minutes: /10
+    seconds: 15
+  conditions: []
+  actions:
+  - delay:
+      hours: 0
+      minutes: '{{ range(0,4)|random }}'
+      seconds: '{{ range(0,59)|random }}'
+      milliseconds: '{{ range(0, 999)|random|int }}'
+  - action: script.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: script.fridge_thermostat_baseline_script_10
+  mode: single
+    alias: fridge_thermostat_baseline_automation
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    minutes: /10
+    seconds: 15
+  conditions: []
+  actions:
+  - delay:
+      hours: 0
+      minutes: '{{ range(0,4)|random }}'
+      seconds: '{{ range(0,59)|random }}'
+      milliseconds: '{{ range(0, 999)|random|int }}'
+  - action: script.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: script.fridge_thermostat_baseline_script_10
+  mode: single
